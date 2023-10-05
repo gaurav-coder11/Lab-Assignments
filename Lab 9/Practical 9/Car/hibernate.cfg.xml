@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <!-- Hibernate configuration file header -->
+
+    <session-factory>
+        <!-- Hibernate Session Factory configuration -->
+
+        <!--
+            hbm2ddl.auto: Specifies how Hibernate should manage the database schema.
+            "update" means it will try to update the schema based on your entity mappings.
+        -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!--
+            dialect: Specifies the SQL dialect for the database you are using.
+            In this case, it's set to MySQL 5.
+        -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!--
+            connection.url: Specifies the URL for the database connection.
+            Change the URL to match your specific database server and schema.
+        -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/meradb</property>
+
+        <!--
+            connection.username: Specifies the database username for authentication.
+        -->
+        <property name="connection.username">root</property>
+
+        <!--
+            connection.password: Specifies the database password for authentication.
+        -->
+        <property name="connection.password">root</property>
+
+        <!--
+            connection.driver_class: Specifies the JDBC driver class for your database.
+            In this case, it's set to the MySQL driver class.
+        -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!--
+            show_sql: Controls whether Hibernate should log SQL statements.
+            When set to true, Hibernate will log SQL statements to the console.
+        -->
+        <property name="show_sql">true</property>
+
+        <!--
+            Mapping configuration for your Hibernate entities.
+            Specify the fully qualified class name of your entity class.
+        -->
+        <mapping class="com.hibernate.newhiber.NewHiber.Cars"/>
+    </session-factory>
+</hibernate-configuration>
